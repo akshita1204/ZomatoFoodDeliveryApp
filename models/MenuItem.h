@@ -1,51 +1,46 @@
 #ifndef MENUITEM_H
 #define MENUITEM_H
 
-#include<string>
+#include <string>
 using namespace std;
 
-class MenuItem
-{
+class MenuItem {
 private:
-string code;
-string name;
-int price;
+    string code;
+    string name;
+    int price;
 
 public:
-MenuItem(string&code,string&name,int price)
-{
-    this->code=code;
-    this->name=name;
-    this->price=price;
-}
+    MenuItem(const string& code, const string& name, int price) {
+        this->code = code;
+        this->name = name;
+        this->price = price;
+    }
 
-string getcode() const{
-    return code;
-}
+    //Getters and setters
+    string getCode() const {
+        return code;
+    }
 
-void setcode(const string&c) 
-{
-  code=c;
-}
+    void setCode(const string &c) {
+        code = c;
+    }
 
-string getname() const{
-    return name;
-}
+    string getName() const {
+        return name;
+    }
 
-void setname(const string &n)
-{
-    name=n;
-} 
+    void setName(const string &n) {
+        name = n;
+    }
 
-int getprice() const
-{
-  return price;
-}
+    int getPrice() const {
+        return price;
+    }
 
-void setprice(const int &p)
-{
-    price=p;
-}
-
+    void setPrice(int p) {
+        price = p;
+    }
 };
-#endif
+
+#endif // MENUITEM_H

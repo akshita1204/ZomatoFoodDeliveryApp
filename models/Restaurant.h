@@ -1,67 +1,59 @@
 #ifndef RESTAURANT_H
 #define RESTAURANT_H
 
-#include<iostream>>
-#include<string>
-#include<vector>
-#include<MenuItem.h>
-
+#include <iostream>
+#include <string>
+#include <vector>
+#include "MenuItem.h"
 using namespace std;
 
-class Restaurant
-{
-
-    private:
-    static int nextResId;
-    int resId;
+class Restaurant {
+private:
+    static int nextRestaurantId;
+    int restaurantId;
     string name;
     string location;
-    vector<MenuItem>menu;
+    vector<MenuItem> menu;
 
-    public:
-    Restaurant(const string &name,const string &location)
-    {
-       this->name=name;
-       this->location=location;
-       this->resId=++nextResId;
+public:
+    Restaurant(const string& name, const string& location) {
+        this->name = name;
+        this->location = location;
+        this->restaurantId = ++nextRestaurantId;
     }
 
-    ~Restaurant()
-    {
-        cout<<"Destroying Restaurant "<<name<<" and clearing its menu"<<endl;
+    ~Restaurant() {
+        // Optional: just for clarity or debug
+        cout << "Destroying Restaurant: " << name << ", and clearing its menu." << endl;
         menu.clear();
     }
 
-    string getName() const{
+    //Getters and setters
+    string getName() const {
         return name;
     }
 
-    string setName(const string &n)
-    {
-       name=n;
+    void setName(const string &n) {
+        name = n;
     }
 
-    string getLocation() const
-    {
+    string getLocation() const {
         return location;
     }
 
-    string setLocation(const string &loc)
-    {
-        location=loc;
+    void setLocation(const string &loc) {
+        location = loc;
     }
 
-    void addMenuItem(const MenuItem &item)
-    {
-      menu.push_back(item);
+    void addMenuItem(const MenuItem &item) {
+        menu.push_back(item);
     }
 
-    const vector<MenuItem>& getMenu() const
-    {
-       return menu;
+    const vector<MenuItem>& getMenu() const {
+        return menu;
     }
-    
 };
 
-int Restaurant::nextResId=0;
-#endif
+int Restaurant::nextRestaurantId = 0;
+
+#endif // RESTAURANT_H
