@@ -39,7 +39,7 @@ int main() {
     // User pay for the cart. If payment is success, notification is sent.
     tomato->payForOrder(user, order);
 
-    // Cleanup Code.
+    
     delete tomato;
     delete user;
     
