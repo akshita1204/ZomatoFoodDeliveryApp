@@ -44,7 +44,7 @@ public:
         restaurant = nullptr;
     }
 
-    // Getters and Setters
+
     void setRestaurant(Restaurant* r) {
         restaurant = r;
     }
