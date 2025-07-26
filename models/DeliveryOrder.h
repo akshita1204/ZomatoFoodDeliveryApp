@@ -17,7 +17,7 @@ public:
         return "Delivery";
     }
 
-    //Getter and Setters
+    
     void setUserAddress(const string& addr) {
         userAddress = addr;
     }
